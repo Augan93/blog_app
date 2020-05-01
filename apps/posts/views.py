@@ -12,6 +12,7 @@ from . import forms
 
 
 def show_posts(request):
+    """Получать постов"""
     latest_post = models.Post.objects.filter(is_active=True).latest('created')
     posts = models.Post.objects.filter(is_active=True).order_by('-created')[1:10]
     context = {

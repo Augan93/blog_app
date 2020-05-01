@@ -17,4 +17,3 @@ http://localhost:8000/init_data/
 
    http://localhost:8000/posts/new/   - страница для создания нового поста (требует авторизацию)
     
-   

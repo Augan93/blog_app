@@ -37,6 +37,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django_summernote',
+    'apps.users',
+    'apps.posts',
 ]
 
 MIDDLEWARE = [
@@ -133,3 +136,27 @@ STATICFILES_DIRS = [
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
+LOGIN_URL = '/users/login/'
+
+SUMMERNOTE_THEME = 'bs4'
+
+SUMMERNOTE_CONFIG = {
+    # You can put custom Summernote settings
+    'summernote': {
+        # As an example, using Summernote Air-mode
+        'airMode': False,
+        # Change editor size
+        'width': '100%',
+        'height': '480',
+        # Or, set editor language/locale forcely
+        'lang': 'ru-RU',
+
+    },
+    'attachment_require_authentication': True,
+    'attachment_filesize_limit': 1024 * 1024 * 10  # default 1024*1024
+}
+
+X_FRAME_OPTIONS = 'SAMEORIGIN'
+
+SESSION_COOKIE_SAMESITE = None
+CRSF_COOKIE_SAMESITE = None

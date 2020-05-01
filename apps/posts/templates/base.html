@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    {% load static %}
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"
+          name="viewport">
+    <title>{% block title %}{% endblock %}</title>
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/libs/materialize.css' %}">
+</head>
+
+<body>
+
+<div class="container">
+    {% block content %}
+    {% endblock %}
+    {% include 'messages.html' %}
+</div>
+
+<script type="text/javascript" src="{% static 'js/libs/materialize.js' %}"></script>
+</body>
+</html>

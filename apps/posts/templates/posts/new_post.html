@@ -1,0 +1,56 @@
+{% extends 'base.html' %}
+
+{% block title %} Post create {% endblock %}
+
+{% block content %}
+    <div class="Card">
+        <form action="" method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            <div class="Input">
+                {{ form.title }}
+            </div>
+            <div class="Input">
+                {{ form.text }}
+            </div>
+            <div class="Input">
+                <p>Выберите изображение</p>
+                {{ form.image }}
+                <div>
+                    <button hidden style="border-radius: 50%" onclick="hideImage(event)" id="clearBtn">x</button>
+                    <img id="output" width="100"/>
+                </div>
+
+            </div>
+            <button class="Button" type="submit">Submit</button>
+        </form>
+    </div>
+
+    <script>
+        var imageInput = document.getElementById('imageId');
+        var output = document.getElementById('output');
+        var clearBtn = document.getElementById('clearBtn');
+
+        var loadFile = function (event) {
+            console.log('File loaded');
+
+            var reader = new FileReader();
+            reader.onload = function () {
+                // var output = document.getElementById('output');
+                output.src = reader.result;
+            };
+            reader.readAsDataURL(event.target.files[0]);
+            output.hidden = false;
+
+            imageInput.hidden = true;
+            clearBtn.hidden = false;
+        };
+
+        var hideImage = function (event) {
+            console.log('hide Image');
+
+            clearBtn.hidden = true;
+            output.hidden = true;
+            imageInput.hidden = false;
+        }
+    </script>
+{% endblock %}

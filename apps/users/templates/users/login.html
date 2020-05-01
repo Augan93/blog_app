@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block title %} Вход {% endblock %}
+
+{% block content %}
+
+    <div class="Login">
+        <div>
+            <h3>Sign In</h3>
+        </div>
+
+        <div>
+            <form method="post" action="">
+                {% csrf_token %}
+                <div class="Input">
+                    {{ login_form.login }}
+                </div>
+                <div class="Input">
+                    {{ login_form.password }}
+                </div>
+                <div>
+                    <input class="Button" type="submit" value="Login">
+                </div>
+            </form>
+        </div>
+    </div>
+
+{% endblock %}
+
+

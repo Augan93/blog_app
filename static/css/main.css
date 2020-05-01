@@ -1,0 +1,130 @@
+.body {
+    margin: 0;
+    padding: 0;
+}
+
+p {
+    font-family: Circe Rounded;
+    font-size: 16px;
+    line-height: 22px;
+    color: #000000;
+}
+
+a {
+    text-decoration: none;
+}
+
+.posts {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 25px;
+}
+
+.redBtn {
+    background-color: #E9399C;
+}
+
+.blueText {
+    color: #315AF2;
+    font-family: Circe Rounded;
+    font-size: 18px;
+    line-height: 25px;
+    font-weight: bold;
+
+    text-align: center;
+}
+
+.title {
+    color: #315AF2;
+    font-family: Museo Cyrl;
+    font-size: 45px;
+    line-height: 52px;
+    letter-spacing: -0.416667px;
+    font-weight: bold;
+}
+
+/*.TextInput {*/
+/*background: #FFFFFF;*/
+/*border: 2px solid #CDCDCD;*/
+/*border-radius: 3px;*/
+/*}*/
+
+nav {
+    background: #FFFFFF;
+    border: 2px solid #CDCDCD;
+    box-sizing: border-box;
+    margin-bottom: 20px;
+}
+
+.readBtn {
+    border: none;
+    outline: none;
+    cursor: pointer;
+
+    color: #FFFFFF;
+    background: #315AF2;
+    border-radius: 3px;
+    padding: 10px 18px;
+
+    font-weight: bold;
+    font-family: Museo Cyrl;
+    font-size: 36px;
+    line-height: 43px;
+    align-items: center;
+    letter-spacing: -0.416667px;
+}
+
+.otherArticles {
+    font-family: Museo Cyrl;
+    font-size: 36px;
+    line-height: 20px;
+    /* or 56% */
+
+    display: flex;
+    align-items: center;
+    letter-spacing: -0.416667px;
+
+    color: #315AF2;
+    font-weight: bold;
+}
+
+.cardTitle {
+    font-family: Circe Rounded;
+    font-size: 24px;
+    line-height: 28px;
+
+    display: flex;
+    align-items: center;
+    text-align: center;
+    letter-spacing: -0.416667px;
+
+    font-weight: bold;
+    color: #315AF2;
+}
+
+.iconClass {
+    font-family: Circe Rounded;
+    font-size: 24px;
+    line-height: 20px;
+
+    color: #CDCDCD;
+}
+
+.smallIcon {
+    font-family: Circe Rounded;
+    font-size: 16px;
+    line-height: 20px;
+
+    color: #CDCDCD;
+}
+
+.postItem {
+    padding: 20px;
+    border-radius: 3px;
+}
+
+.newTag {
+    font-size: 16px;
+    line-height: 20px;
+    color: #E9399C;
+}

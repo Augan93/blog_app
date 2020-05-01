@@ -1,0 +1,11 @@
+{% load static %}
+<nav>
+    <div class="nav-wrapper">
+        <a href="/"><img src="{% static 'images/kod.svg' %}" alt=""></a>
+        <ul id="nav-mobile" class="right hide-on-med-and-down">
+            <li><a href="#"><img src="{% static 'images/messages.svg' %}" alt=""></a></li>
+            <li><a href="#"><img src="{% static 'images/avatar.svg' %}" width="50px" alt=""></a></li>
+            <li><a href="{% url 'users:logout' %}"><img src="{% static 'images/logout.svg' %}" alt=""></a></li>
+        </ul>
+    </div>
+</nav>

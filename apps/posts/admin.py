@@ -16,5 +16,6 @@ class PostAdmin(admin.ModelAdmin):
         'id',
         'title',
         'text',
+        'image',
         'is_active',
     ]

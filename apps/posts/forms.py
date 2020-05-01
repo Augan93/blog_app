@@ -12,11 +12,17 @@ class PostCreateForm(forms.ModelForm):
             'image',
         )
         widgets = {
+            'title': forms.TextInput(
+                attrs={
+                    'placeholder': 'Введите название статьи',
+                }
+            ),
             'text': SummernoteWidget(),
             'image': forms.FileInput(
                 attrs={
                     'onchange': 'loadFile(event)',
                     'id': 'imageId',
+                    'value': 'file',
                 }
             )
         }

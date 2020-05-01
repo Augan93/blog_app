@@ -3,27 +3,52 @@
 {% block title %} Post create {% endblock %}
 
 {% block content %}
-    <div class="Card">
-        <form action="" method="post" enctype="multipart/form-data">
-            {% csrf_token %}
-            <div class="Input">
-                {{ form.title }}
+    <h2 class="title">Добавить статью</h2>
+    <form action="" method="post" enctype="multipart/form-data">
+
+        {% csrf_token %}
+        <div class="row">
+            <div class="col s8">
+                <div class="input-field">
+                    {{ form.title }}
+                </div>
+                <div class="input-field">
+                    {{ form.text }}
+                </div>
             </div>
-            <div class="Input">
-                {{ form.text }}
-            </div>
-            <div class="Input">
-                <p>Выберите изображение</p>
-                {{ form.image }}
-                <div>
-                    <button hidden style="border-radius: 50%" onclick="hideImage(event)" id="clearBtn">x</button>
-                    <img id="output" width="100"/>
+
+            <div class="col s4">
+                <div class="input-field">
+                    <button class="waves-effect waves-light btn redBtn" type="submit">Опубликовать</button>
                 </div>
 
+                <div class="row">
+                    <div class="col s3 m9">
+                        <div class="card">
+                            <div class="card-content">
+                                <p class="blueText">Загрузите изображение</p>
+                                {{ form.image }}
+                                <div>
+
+                                    <button hidden style="border-radius: 50%" onclick="hideImage(event)"
+                                            id="clearBtn">x
+                                    </button>
+                                    <img id="output" width="100"/>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
             </div>
-            <button class="Button" type="submit">Submit</button>
-        </form>
-    </div>
+        </div>
+
+    </form>
+
+
+
 
     <script>
         var imageInput = document.getElementById('imageId');

@@ -1,4 +1,4 @@
-from django.shortcuts import render, HttpResponse
+from django.shortcuts import render, HttpResponse, redirect
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
 from django.contrib.auth.models import User
@@ -35,10 +35,11 @@ def create_post(request):
                                     files=request.FILES)
         if form.is_valid():
             form.save(context={'request': request})
-            messages.success(request, 'Success!')
+            messages.success(request, 'Пост успешно создан!')
+            return redirect('posts:posts')
 
     context = {
-        'form': form
+        'form': form,
     }
 
     return render(

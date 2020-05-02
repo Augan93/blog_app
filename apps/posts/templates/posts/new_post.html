@@ -63,8 +63,9 @@
         };
 
         var hideImage = function (event) {
+            event.preventDefault();
             output.setAttribute('src', '');
-            imageInput.value = '';
+            // imageInput.value = '';
             imgInputLabel.style.display = 'inline-block';
             imageContainer.hidden = true;
         }

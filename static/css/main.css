@@ -43,11 +43,6 @@ a {
     font-weight: bold;
 }
 
-/*.TextInput {*/
-/*background: #FFFFFF;*/
-/*border: 2px solid #CDCDCD;*/
-/*border-radius: 3px;*/
-/*}*/
 
 nav {
     background: #FFFFFF;
@@ -127,4 +122,59 @@ nav {
     font-size: 16px;
     line-height: 20px;
     color: #E9399C;
+}
+
+.clearBtn {
+    border-radius: 50%;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    position: absolute;
+    top: 5px;
+    right: 3px;
+}
+
+.clearBtn:hover {
+    opacity: 0.9;
+}
+
+#imageContainer {
+    border: 1px solid darkgray;
+    padding: 10px;
+    margin-top: 10px;
+    position: relative;
+    text-align: center;
+}
+
+#imageId {
+    width: 0.1px;
+    height: 0.1px;
+    opacity: 0;
+    overflow: hidden;
+    position: absolute;
+    z-index: -1;
+}
+
+#imgInputLabel {
+    background-color: #315AF2;
+    border-radius: 3px;
+    display: inline-block;
+    cursor: pointer;
+    padding: 10px 30px;
+    margin-top: 10px;
+
+    font-family: Museo Cyrl;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 22px;
+    color: white;
+}
+
+.imgUpload {
+    text-align: center;
+}
+
+.rightFormBlock {
+    margin-top: 12px;
 }

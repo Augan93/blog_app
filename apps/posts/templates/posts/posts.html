@@ -1,5 +1,7 @@
 {% extends 'base.html' %}
 {% load thumbnail %}
+{% load static %}
+{% load humanize %}
 
 {% block title %}Posts{% endblock %}
 
@@ -45,13 +47,14 @@
     <hr>
 
     <h2 class="otherArticles">Другие статьи</h2>
+{#    <img src="{% static 'images/filter.svg' %}" alt="">#}
 
     <div class="posts">
         {% for post in posts %}
 
 
             <div class="card postItem">
-                <p>{{ post.created }}</p>
+                <p>{{ post.created | date }} {{ post.created | time }}</p>
                 <div class="card-image">
                     <a href="#"><img src="{{ post.image.url }}"></a>
                 </div>

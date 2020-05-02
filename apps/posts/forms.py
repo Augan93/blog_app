@@ -22,7 +22,6 @@ class PostCreateForm(forms.ModelForm):
                 attrs={
                     'onchange': 'loadFile(event)',
                     'id': 'imageId',
-                    'value': 'file',
                 }
             )
         }

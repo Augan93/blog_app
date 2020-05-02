@@ -17,7 +17,7 @@
                 </div>
             </div>
 
-            <div class="col s4">
+            <div class="col s4 rightFormBlock">
                 <div class="input-field">
                     <button class="waves-effect waves-light btn redBtn" type="submit">Опубликовать</button>
                 </div>
@@ -25,16 +25,13 @@
                 <div class="row">
                     <div class="col s3 m9">
                         <div class="card">
-                            <div class="card-content">
+                            <div class="card-content imgUpload">
                                 <p class="blueText">Загрузите изображение</p>
                                 {{ form.image }}
-                                <div>
-
-                                    <button hidden style="border-radius: 50%" onclick="hideImage(event)"
-                                            id="clearBtn">x
-                                    </button>
-                                    <img id="output" width="100"/>
-
+                                <label id="imgInputLabel" for="imageId">Выбрать</label>
+                                <div id="imageContainer" hidden>
+                                    <button class="clearBtn" onclick="hideImage(event)">x</button>
+                                    <img id="output" width="150px"/>
                                 </div>
                             </div>
                         </div>
@@ -47,35 +44,29 @@
 
     </form>
 
-
-
-
     <script>
         var imageInput = document.getElementById('imageId');
+        var imgInputLabel = document.getElementById('imgInputLabel');
         var output = document.getElementById('output');
-        var clearBtn = document.getElementById('clearBtn');
+        var imageContainer = document.getElementById('imageContainer');
 
         var loadFile = function (event) {
-            console.log('File loaded');
-
             var reader = new FileReader();
+
             reader.onload = function () {
-                // var output = document.getElementById('output');
                 output.src = reader.result;
             };
             reader.readAsDataURL(event.target.files[0]);
-            output.hidden = false;
 
-            imageInput.hidden = true;
-            clearBtn.hidden = false;
+            imgInputLabel.style.display = 'none';
+            imageContainer.hidden = false;
         };
 
         var hideImage = function (event) {
-            console.log('hide Image');
-
-            clearBtn.hidden = true;
-            output.hidden = true;
-            imageInput.hidden = false;
+            output.setAttribute('src', '');
+            imageInput.value = '';
+            imgInputLabel.style.display = 'inline-block';
+            imageContainer.hidden = true;
         }
     </script>
 {% endblock %}
